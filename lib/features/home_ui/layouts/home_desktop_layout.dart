@@ -12,6 +12,8 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
     DiscoverPage(),
+    Center(child: Text("Search Page")),
+    Center(child: Text("Library & Playlists"),)
   ];
 
   @override
@@ -26,6 +28,18 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                   icon: Icon(Icons.explore_outlined),
                   selectedIcon: Icon(Icons.explore),
                   label: Text("Discover")
+              ),
+
+              NavigationRailDestination(
+                  icon: Icon(Icons.search_off),
+                  selectedIcon: Icon(Icons.search),
+                  label: Text("Search")
+              ),
+
+              NavigationRailDestination(
+                  icon: Icon(Icons.library_music_outlined),
+                  selectedIcon: Icon(Icons.library_music),
+                  label: Text("Library")
               )
             ],
 
