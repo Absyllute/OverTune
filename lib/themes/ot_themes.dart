@@ -6,7 +6,7 @@ class OtThemes {
     background: Color(0xFFF8F9FA),
     onBackground: Color(0xFFD7D7DD),
     surface: Color(0xFFFFFFFF),
-    primary: Color(0xFF6750A4),
+    primary: Color(0xFF0476B5),
     defaultTypography: Color(0xFF000000)
   );
 
@@ -14,7 +14,7 @@ class OtThemes {
       background: Color(0xFF121212),
       onBackground: Color(0xFF1E1E1E),
       surface: Color(0xFF222222),
-      primary: Color(0xFFD0BCFF),
+      primary: Color(0xFF0476B5),
       defaultTypography: Color(0xFFE3E3E3)
   );
 }
