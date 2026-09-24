@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 // This is a helper widget for easily controlling what layouts the app should use depending on the user's screen size ~Absyllute
+// This is not part of the Flutter SDK.
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
     super.key,
