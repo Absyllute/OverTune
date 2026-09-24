@@ -33,24 +33,25 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
           destinations: [
             NavigationDestination(
                 icon: Icon(Icons.explore_outlined),
-                selectedIcon: Icon(Icons.explore),
+                selectedIcon: Icon(Icons.explore_rounded),
                 label: "Discover"
             ),
 
             NavigationDestination(
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.search_rounded),
+                selectedIcon: Icon(Icons.search_rounded),
                 label: "Search"
             ),
 
             NavigationDestination(
                 icon: Icon(Icons.dashboard_outlined),
-                selectedIcon: Icon(Icons.dashboard),
+                selectedIcon: Icon(Icons.dashboard_rounded),
                 label: "Library"
             ),
 
             NavigationDestination(
                 icon: Icon(Icons.settings_outlined),
-                selectedIcon: Icon(Icons.settings),
+                selectedIcon: Icon(Icons.settings_rounded),
                 label: "Settings"
             )
           ]

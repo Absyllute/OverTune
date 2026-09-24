@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:overtune/features/home_ui/home_ui.dart';
+import 'package:overtune/global/current_theme.dart';
+import 'package:overtune/themes/widgets/navbar_theme.dart';
 import 'package:overtune/themes/widgets/navigation_rail_theme.dart';
 
 void main() {
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
       title: 'OverTune',
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-        navigationRailTheme: cNavigationRailTheme
+        navigationRailTheme: cNavigationRailTheme,
+        navigationBarTheme: cNavbarTheme,
+        scaffoldBackgroundColor: CurrentTheme.theme.background
       ),
       home: HomeUi(),
     );

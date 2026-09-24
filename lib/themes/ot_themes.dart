@@ -12,9 +12,9 @@ class OtThemes {
 
   static const defaultDark = OtThemeData(
       background: Color(0xFF121212),
-      onBackground: Color(0xFF222222),
-      surface: Color(0xFF1E1E1E),
-      primary: Color(0xFF6750A4),
-      defaultTypography: Color(0xFFFFFFFF)
+      onBackground: Color(0xFF1E1E1E),
+      surface: Color(0xFF222222),
+      primary: Color(0xFFD0BCFF),
+      defaultTypography: Color(0xFFE3E3E3)
   );
 }
