@@ -3,14 +3,18 @@ import 'package:overtune/themes/ot_theme_data.dart';
 
 class OtThemes {
   static const defaultLight = OtThemeData(
-  background: Color(0xFFF8F9FA),
-  surface: Color(0xFFFFFFFF),
-  primary: Color(0xFF6750A4)
+    background: Color(0xFFF8F9FA),
+    onBackground: Color(0xFFD7D7DD),
+    surface: Color(0xFFFFFFFF),
+    primary: Color(0xFF6750A4),
+    defaultTypography: Color(0xFF000000)
   );
 
   static const defaultDark = OtThemeData(
       background: Color(0xFF121212),
+      onBackground: Color(0xFF222222),
       surface: Color(0xFF1E1E1E),
-      primary: Color(0xFF625B71)
+      primary: Color(0xFF6750A4),
+      defaultTypography: Color(0xFFFFFFFF)
   );
 }

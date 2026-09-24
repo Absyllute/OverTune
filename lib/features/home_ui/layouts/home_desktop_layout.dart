@@ -39,10 +39,6 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
 
           ),
 
-          VerticalDivider(
-            thickness: 1,
-          ),
-
           Expanded(
               child: _pages[_selectedIndex]
           )
