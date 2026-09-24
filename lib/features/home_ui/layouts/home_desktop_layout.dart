@@ -31,7 +31,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
               ),
 
               NavigationRailDestination(
-                  icon: Icon(Icons.search_off),
+                  icon: Icon(Icons.search),
                   selectedIcon: Icon(Icons.search),
                   label: Text("Search")
               ),
