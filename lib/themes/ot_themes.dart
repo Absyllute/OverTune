@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:overtune/themes/ot_themedata.dart';
+import 'package:overtune/themes/ot_theme_data.dart';
 
 class OtThemes {
   static const defaultLight = OtThemeData(
