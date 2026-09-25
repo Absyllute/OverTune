@@ -3,6 +3,10 @@ import 'package:overtune/global/current_theme.dart';
 
 class OTTypography {
   static final TextStyle placeholder = TextStyle(
+    color: CurrentTheme.theme.defaultTypography.withValues(alpha: .4)
+  );
+
+  static final TextStyle regular = TextStyle(
     color: CurrentTheme.theme.defaultTypography
   );
 }

@@ -3,6 +3,7 @@ import 'package:overtune/features/home_ui/home_ui.dart';
 import 'package:overtune/global/current_theme.dart';
 import 'package:overtune/themes/widgets/navbar_theme.dart';
 import 'package:overtune/themes/widgets/navigation_rail_theme.dart';
+import 'package:overtune/themes/widgets/searchbar_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
         navigationRailTheme: cNavigationRailTheme,
         navigationBarTheme: cNavbarTheme,
-        scaffoldBackgroundColor: CurrentTheme.theme.background
+        scaffoldBackgroundColor: CurrentTheme.theme.background,
+        searchBarTheme: cSearchBarTheme,
+        textSelectionTheme: cTextSelectionThemeData
       ),
       home: HomeUi(),
     );
