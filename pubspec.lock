@@ -345,7 +345,7 @@ packages:
     source: hosted
     version: "6.6.1"
   youtube_explode_dart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: youtube_explode_dart
       sha256: "10134a53989b2f3dc576121735aec8fc6d88784956f4a2ad1a2525b006373a76"
