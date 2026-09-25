@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:overtune/features/discover/discover_page.dart';
+import 'package:overtune/features/search/search_page.dart';
 /* The files named 'home' only store 'overlay widgets' like the NavigationRail
  * and Navigation Bar. The default screen is the Discover page. There is no "home_page.dart"
  * ~ Absyllute
@@ -16,7 +17,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
     DiscoverPage(),
-    Center(child: Text("Search Page")),
+    SearchPage(),
     Center(child: Text("Library & Playlists"),)
   ];
 
