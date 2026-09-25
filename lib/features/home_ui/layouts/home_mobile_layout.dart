@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:overtune/features/discover/layouts/discover_mobile_layout.dart';
+/* The files named 'home' only store 'overlay widgets' like the NavigationRail
+ * and Navigation Bar. The default screen is the Discover page. There is no "home_page.dart"
+ * ~ Absyllute
+ */
 
 class HomeMobileLayout extends StatefulWidget {
   const HomeMobileLayout({super.key});
