@@ -9,4 +9,9 @@ class OTTypography {
   static final TextStyle regular = TextStyle(
     color: CurrentTheme.theme.defaultTypography
   );
+
+  static final TextStyle smallDesktop = TextStyle(
+    color: CurrentTheme.theme.dimTypography,
+    fontSize: 16
+  );
 }

@@ -36,7 +36,7 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
     });
 
     try {
-      final results = await ytInst.music.searchSongs(query);
+      final results = await ytInst.music.searchSongs(query, limit: 50);
 
       setState(() {
         searchResults = results;
@@ -69,10 +69,10 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
-                  maxCrossAxisExtent: 180,
+                  maxCrossAxisExtent: 220,
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
-                  mainAxisExtent: 180
+                  childAspectRatio: .70
                 ),
                 itemCount: searchResults.length,
                 itemBuilder: (context, index) {
