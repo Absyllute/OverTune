@@ -6,6 +6,12 @@ class OTTypography {
     color: CurrentTheme.theme.defaultTypography.withValues(alpha: .4)
   );
 
+  static final TextStyle h1 = TextStyle (
+      fontSize: 32,
+      color: CurrentTheme.theme.defaultTypography,
+      fontWeight: .bold
+  );
+
   static final TextStyle regular = TextStyle(
     color: CurrentTheme.theme.defaultTypography
   );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:overtune/global/current_theme.dart';
+import 'package:overtune/themes/typography.dart';
 import 'package:overtune/widgets/large_song_card.dart';
 import 'package:silky_scroll/silky_scroll.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
@@ -68,26 +69,60 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             Expanded(
               flex: 5,
               child: Center(
-                child: Row(
-                  mainAxisAlignment: .center,
-                  children: [
-                    Text (
-                      "Start searching to get started!",
-                      style: TextStyle(
-                        fontSize: 32,
-                        color: Colors.white,
-                        fontWeight: .bold
-                      ),
-                    ),
-
-                    SizedBox(width: 10),
-
-                    Icon(
-                      Icons.search,
-                      color: CurrentTheme.theme.primary,
-                      size: 64,
+                child: Container (
+                  padding: .all(24),
+                  decoration: BoxDecoration(
+                    color: CurrentTheme.theme.surface,
+                    borderRadius: .circular(24),
+                    border: .all(
+                      color: CurrentTheme.theme.outline,
+                      width: 2
                     )
-                  ],
+                  ),
+                  child: Column (
+                    mainAxisSize: .min,
+                    children: [
+                      Container(
+                        padding: .all(16),
+                        decoration: BoxDecoration(
+                          shape: .circle,
+                          gradient: LinearGradient(
+                              colors: [
+                                CurrentTheme.theme.primary.withValues(alpha: .5),
+                                CurrentTheme.theme.primaryAlt.withValues(alpha: .5),
+                              ],
+
+                            begin: .topLeft,
+                            end: .bottomRight
+                          ),
+
+                          border: .all(
+                            color: CurrentTheme.theme.primaryAlt,
+                            width: 1.5
+                          )
+                        ),
+                        child: Icon(
+                          Icons.search,
+                          size: 85,
+                          color: CurrentTheme.theme.defaultTypography,
+                        ),
+                      ),
+
+                      Text (
+                        "Discover new music!",
+                        style: OTTypography.h1
+                      ),
+                      
+                      Text(
+                        "Type anything to search through a massive library of music",
+                        style: .new(
+                          color: CurrentTheme.theme.dimTypography,
+                          fontWeight: .w600,
+                          fontSize: 18
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             )
