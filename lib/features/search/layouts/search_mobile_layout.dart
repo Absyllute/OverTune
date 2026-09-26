@@ -44,32 +44,34 @@ class _SearchMobileLayoutState extends State<SearchMobileLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: Column (
-        children: [
-          SearchBar(
-            hintText: "Search for a song...",
-            controller: searchBarController,
-            onSubmitted: (query) {
-              _handleSearch(query);
-            },
-          ),
-
-          SizedBox(height: 20),
-
-          if (isLoading)
-            Expanded(child: Center(child: CircularProgressIndicator()))
-          else
-            Expanded(
-              child: ListView.builder(
-                itemCount: searchResults.length,
-                itemBuilder: (context, index) {
-                  return SmallSongCard(song: searchResults[index]);
-                },
-              ),
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column (
+          children: [
+            SearchBar(
+              hintText: "Search for a song...",
+              controller: searchBarController,
+              onSubmitted: (query) {
+                _handleSearch(query);
+              },
             ),
-        ],
+      
+            SizedBox(height: 20),
+      
+            if (isLoading)
+              Expanded(child: Center(child: CircularProgressIndicator()))
+            else
+              Expanded(
+                child: ListView.builder(
+                  itemCount: searchResults.length,
+                  itemBuilder: (context, index) {
+                    return SmallSongCard(song: searchResults[index]);
+                  },
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

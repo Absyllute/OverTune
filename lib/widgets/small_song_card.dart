@@ -14,7 +14,7 @@ class SmallSongCard extends StatelessWidget {
     return Padding(
       padding: .all(2.0),
       child: Container(
-        height: 64,
+        height: 72,
         padding: .all(8),
         decoration: BoxDecoration(
           color: CurrentTheme.theme.onBackground,
