@@ -11,33 +11,64 @@ class SmallSongCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: .all(8),
-      decoration: BoxDecoration(
-        color: CurrentTheme.theme.onBackground,
-        borderRadius: .circular(8),
-      ),
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 1.0,
-            child: ClipRRect(
-              borderRadius: .circular(8),
-              child: Transform.scale(
-                scale: 1.25,
-                child: Image.network(song.thumbnails.highResUrl),
+    return Padding(
+      padding: .all(2.0),
+      child: Container(
+        height: 64,
+        padding: .all(8),
+        decoration: BoxDecoration(
+          color: CurrentTheme.theme.onBackground,
+          borderRadius: .circular(8),
+        ),
+        child: Row (
+          crossAxisAlignment: .start,
+          children: [
+            SizedBox(
+              height: 56,
+              child: AspectRatio(
+                aspectRatio: 1.0,
+                child: ClipRRect(
+                  borderRadius: .circular(8),
+                  child: Transform.scale(
+                    scale: 1.75,
+                    child: Image.network(song.thumbnails.highResUrl),
+                  ),
+                ),
               ),
             ),
-          ),
 
-          Column(
-            mainAxisSize: .min,
-            children: [
-              Text(song.title, style: OTTypography.regular),
-              Text(song.author, style: OTTypography.smallDesktop)
-            ],
-          )
-        ],
+            SizedBox(width: 6),
+
+            Expanded(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Text (
+                              song.title,
+                              overflow: .ellipsis,
+                              style: OTTypography.medium
+                          )
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Text(
+                              song.author,
+                              overflow: .ellipsis,
+                              style: OTTypography.smallDesktop
+                          )
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -14,4 +14,10 @@ class OTTypography {
     color: CurrentTheme.theme.dimTypography,
     fontSize: 16
   );
+
+  static final TextStyle medium = TextStyle(
+    fontSize: 17,
+    color: CurrentTheme.theme.defaultTypography,
+    fontWeight: .bold
+  );
 }

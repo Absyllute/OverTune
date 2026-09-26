@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:overtune/widgets/small_song_card.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 import 'package:youtube_music_explode_dart/youtube_music_explode_dart.dart';
 
@@ -23,11 +24,16 @@ class _SearchMobileLayoutState extends State<SearchMobileLayout> {
       isLoading = true;
     });
 
-    searchResults = await ytInst.music.searchSongs(query, limit: 50);
+    try {
+      final results = await ytInst.music.searchSongs(query, limit: 50);
 
-    setState(() {
-      isLoading = false;
-    });
+      setState(() {
+        searchResults = results;
+        isLoading = false;
+      });
+    } catch (e) {
+      isLoading = false; // error handling
+    }
   }
 
   @override
@@ -41,7 +47,6 @@ class _SearchMobileLayoutState extends State<SearchMobileLayout> {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column (
-        spacing: 10,
         children: [
           SearchBar(
             hintText: "Search for a song...",
@@ -51,12 +56,19 @@ class _SearchMobileLayoutState extends State<SearchMobileLayout> {
             },
           ),
 
-          if (isLoading)
-            Center(child: CircularProgressIndicator())
-          else
-            Text("Search Results!"),
+          SizedBox(height: 20),
 
-          SizedBox(height: 20)
+          if (isLoading)
+            Expanded(child: Center(child: CircularProgressIndicator()))
+          else
+            Expanded(
+              child: ListView.builder(
+                itemCount: searchResults.length,
+                itemBuilder: (context, index) {
+                  return SmallSongCard(song: searchResults[index]);
+                },
+              ),
+            ),
         ],
       ),
     );

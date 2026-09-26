@@ -4,8 +4,6 @@ import 'package:silky_scroll/silky_scroll.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 import 'package:youtube_music_explode_dart/youtube_music_explode_dart.dart';
 
-import '../../../themes/typography.dart';
-
 class SearchDesktopLayout extends StatefulWidget {
   const SearchDesktopLayout({super.key});
 
