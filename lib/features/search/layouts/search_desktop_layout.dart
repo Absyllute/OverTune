@@ -70,23 +70,17 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             Expanded(child: CircularProgressIndicator())
           else
             Expanded(
-              child: SilkyScroll (
-                builder: (context, controller, physics, pointerDeviceKind) {
-                  return GridView.builder(
-                    controller: controller,
-                    physics: physics,
-                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
-                      maxCrossAxisExtent: 220,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      childAspectRatio: .70
-                    ),
-                    itemCount: searchResults.length,
-                    itemBuilder: (context, index) {
-                      return LargeSongCard(song: searchResults[index]);
-                    },
-                  );
-                }
+              child: SilkyGridView.builder(
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
+                  maxCrossAxisExtent: 220,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: .70
+                ),
+                itemCount: searchResults.length,
+                itemBuilder: (context, index) {
+                  return LargeSongCard(song: searchResults[index]);
+                },
               )
             )
         ],
