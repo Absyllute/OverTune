@@ -7,8 +7,8 @@ class OtThemes {
     onBackground: Color(0xFFD7D7DD),
     surface: Color(0xFFFFFFFF),
     outline: Color(0xFFD1D1D1),
-    primary: Color(0xFF0476B5),
-    primaryAlt: Color(0xFF699BB6),
+    primary: Color(0xFFE27230),
+    primaryAlt: Color(0xFFF7B24B),
     defaultTypography: Color(0xFF000000),
     dimTypography: Color(0xFF222222)
   );
@@ -18,8 +18,8 @@ class OtThemes {
       onBackground: Color(0xFF1E1E1E),
       surface: Color(0xFF222222),
       outline: Color(0xFF444444),
-      primary: Color(0xFF0476B5),
-      primaryAlt: Color(0xFF699BB6),
+      primary: Color(0xFFE27230),
+      primaryAlt: Color(0xFFF7B24B),
       defaultTypography: Color(0xFFE3E3E3),
       dimTypography: Color(0xFF888888)
   );
