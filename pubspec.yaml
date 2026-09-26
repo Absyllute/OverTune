@@ -32,10 +32,12 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
+  silky_scroll: ^2.6.4 # For smooth scrolling
   youtube_explode_dart: ^3.1.0
   youtube_music_explode_dart: # Absyllute's fork of youtube_music_explode_dart with more features :)
     git:
       url: https://github.com/Absyllute/youtube_music_explode_dart.git
+
 
 dev_dependencies:
   flutter_test:

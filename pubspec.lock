@@ -107,6 +107,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   freezed_annotation:
     dependency: transitive
     description:
@@ -235,6 +240,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.5.2"
+  silky_scroll:
+    dependency: "direct main"
+    description:
+      name: silky_scroll
+      sha256: "8595e55b763981dc6748f26d88596ed31c2169cd47bf04af39ee4ba9ab8544f6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.6.4"
   simple_sparse_list:
     dependency: transitive
     description:
@@ -363,4 +376,4 @@ packages:
     version: "0.2.0"
 sdks:
   dart: ">=3.14.0-65.0.dev <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
+  flutter: ">=3.44.0"

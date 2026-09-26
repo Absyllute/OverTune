@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:overtune/widgets/large_song_card.dart';
+import 'package:silky_scroll/silky_scroll.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 import 'package:youtube_music_explode_dart/youtube_music_explode_dart.dart';
 
@@ -69,17 +70,23 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             Expanded(child: CircularProgressIndicator())
           else
             Expanded(
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
-                  maxCrossAxisExtent: 220,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: .70
-                ),
-                itemCount: searchResults.length,
-                itemBuilder: (context, index) {
-                  return LargeSongCard(song: searchResults[index]);
-                },
+              child: SilkyScroll (
+                builder: (context, controller, physics, pointerDeviceKind) {
+                  return GridView.builder(
+                    controller: controller,
+                    physics: physics,
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent (
+                      maxCrossAxisExtent: 220,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: .70
+                    ),
+                    itemCount: searchResults.length,
+                    itemBuilder: (context, index) {
+                      return LargeSongCard(song: searchResults[index]);
+                    },
+                  );
+                }
               )
             )
         ],
