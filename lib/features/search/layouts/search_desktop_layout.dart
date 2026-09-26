@@ -63,6 +63,8 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             },
           ),
 
+          SizedBox(height: 20),
+
           if (isLoading)
             Expanded(child: CircularProgressIndicator())
           else
