@@ -130,7 +130,24 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             SizedBox(),
 
           if (isLoading)
-            Expanded(child: CircularProgressIndicator())
+            Expanded(
+                child: Column(
+                  mainAxisAlignment: .center,
+                  children: [
+                    Text(
+                        "Searching for songs & artists...",
+                        style: OTTypography.h1.copyWith(
+                          fontSize: 24,
+                          fontWeight: .w600
+                        )
+                    ),
+
+                    SizedBox(height: 10),
+
+                    CircularProgressIndicator(),
+                  ],
+                )
+            )
           else
             Expanded(
               child: SilkyGridView.builder(
