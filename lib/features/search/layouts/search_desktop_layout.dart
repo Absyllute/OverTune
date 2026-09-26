@@ -56,7 +56,6 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
         children: [
           SearchBar (
             hintText: "Search for a song...",
-            hintStyle: .all(OTTypography.placeholder),
             controller: searchBarController,
             onSubmitted: (value) {
               showResults = true;
