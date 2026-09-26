@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:overtune/global/current_theme.dart';
 import 'package:overtune/widgets/large_song_card.dart';
 import 'package:silky_scroll/silky_scroll.dart';
 import 'package:youtube_explode_dart/youtube_explode_dart.dart';
@@ -62,6 +63,36 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
           ),
 
           SizedBox(height: 20),
+
+          if (!showResults)
+            Expanded(
+              flex: 5,
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: .center,
+                  children: [
+                    Text (
+                      "Start searching to get started!",
+                      style: TextStyle(
+                        fontSize: 32,
+                        color: Colors.white,
+                        fontWeight: .bold
+                      ),
+                    ),
+
+                    SizedBox(width: 10),
+
+                    Icon(
+                      Icons.search,
+                      color: CurrentTheme.theme.primary,
+                      size: 64,
+                    )
+                  ],
+                ),
+              ),
+            )
+          else
+            SizedBox(),
 
           if (isLoading)
             Expanded(child: CircularProgressIndicator())
