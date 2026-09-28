@@ -3,8 +3,8 @@ import 'package:overtune/global/current_theme.dart';
 
 import '../../../themes/typography.dart';
 
-class DiscoverMusicWidget extends StatelessWidget {
-  const DiscoverMusicWidget({super.key});
+class SearchDiscoverMusicWidget extends StatelessWidget {
+  const SearchDiscoverMusicWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

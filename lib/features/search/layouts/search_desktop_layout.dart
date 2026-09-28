@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:overtune/features/search/widgets/discover_music_widget.dart';
+import 'package:overtune/features/search/widgets/search_discover_music_widget.dart';
 import 'package:overtune/global/current_theme.dart';
 import 'package:overtune/themes/typography.dart';
 import 'package:overtune/widgets/large_song_card.dart';
@@ -70,7 +70,7 @@ class _SearchDesktopLayoutState extends State<SearchDesktopLayout> {
             Expanded(
               flex: 5,
               child: Center(
-                child: DiscoverMusicWidget()
+                child: SearchDiscoverMusicWidget()
               ),
             )
           else
