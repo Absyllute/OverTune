@@ -7,6 +7,7 @@ final SearchBarThemeData cSearchBarTheme = SearchBarThemeData(
   elevation: .all(0),
   hintStyle: .all(OTTypography.placeholder),
   textStyle: .all(OTTypography.regular),
+  padding: .all(.only(left: 12))
 );
 
 final TextSelectionThemeData cTextSelectionThemeData = TextSelectionThemeData(

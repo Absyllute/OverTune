@@ -25,62 +25,72 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        toolbarHeight: 70,
-        title: SafeArea(
-          child: Padding(
-            padding: .only(top: 8.0),
-            child: SizedBox(
-              width: 512,
-              child: SearchBar(
-                backgroundColor: WidgetStateProperty.all(CurrentTheme.theme.onBackground),
-                leading: Icon(Icons.search, color: CurrentTheme.theme.dimTypography, size: 32),
-                hintText: "What do you want to play?",
-              ),
-            ),
-          ),
-        ),
-      ),
-
       body: Row(
         children: [
-          // NavigationRail(
-          //   extended: true,
-          //   destinations: [
-          //     NavigationRailDestination(
-          //         icon: Icon(Icons.explore_outlined),
-          //         selectedIcon: Icon(Icons.explore),
-          //         label: Text("Discover")
-          //     ),
-          //
-          //     NavigationRailDestination(
-          //         icon: Icon(Icons.search),
-          //         selectedIcon: Icon(Icons.search),
-          //         label: Text("Search")
-          //     ),
-          //
-          //     NavigationRailDestination(
-          //         icon: Icon(Icons.library_music_outlined),
-          //         selectedIcon: Icon(Icons.library_music),
-          //         label: Text("Library")
-          //     )
-          //   ],
-          //
-          //   onDestinationSelected: (int index) {
-          //     setState(() {
-          //       _selectedIndex = index;
-          //     });
-          //   },
-          //
-          //   selectedIndex: _selectedIndex,
-          //
-          // ),
+          NavigationRail(
+            extended: true,
+            destinations: [
+              NavigationRailDestination(
+                  icon: Icon(Icons.explore_outlined),
+                  selectedIcon: Icon(Icons.explore),
+                  label: Text("Discover")
+              ),
+
+              NavigationRailDestination(
+                  icon: Icon(Icons.search),
+                  selectedIcon: Icon(Icons.search),
+                  label: Text("Search")
+              ),
+
+              NavigationRailDestination(
+                  icon: Icon(Icons.library_music_outlined),
+                  selectedIcon: Icon(Icons.library_music),
+                  label: Text("Library")
+              )
+            ],
+
+            onDestinationSelected: (int index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+            selectedIndex: _selectedIndex,
+          ),
 
           Expanded(
-              child: _pages[_selectedIndex]
-          )
+            child: Column(
+              children: [
+                PreferredSize(
+                  preferredSize: Size.fromHeight(70),
+                  child: Container(
+                    color: CurrentTheme.theme.onBackground,
+                    height: 70,
+                    width: MediaQuery.of(context).size.width,
+                    child: SafeArea(
+                      child: Padding(
+                        padding: .only(top: 4.0, bottom: 4.0),
+                        child: Center(
+                          child: SearchBar(
+                            constraints: BoxConstraints(
+                              maxWidth: 512,
+                              minHeight: 64
+                            ),
+                            backgroundColor: WidgetStateProperty.all(CurrentTheme.theme.background),
+                            leading: Icon(Icons.search, color: CurrentTheme.theme.dimTypography, size: 32),
+                            hintText: "What do you want to play?",
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ),
+
+                Expanded(
+                    child: _pages[_selectedIndex]
+                )
+              ],
+            )
+          ),
         ],
       ),
     );
