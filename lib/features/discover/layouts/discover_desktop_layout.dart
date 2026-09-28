@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:overtune/features/discover/widgets/unlock_discover.dart';
 
 class DiscoverDesktopLayout extends StatelessWidget {
   const DiscoverDesktopLayout({super.key});
@@ -6,7 +7,7 @@ class DiscoverDesktopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Discover Desktop Layout"),
+      child: UnlockDiscover(),
     );
   }
 }
