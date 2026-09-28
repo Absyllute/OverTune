@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:overtune/features/discover/discover_page.dart';
 import 'package:overtune/features/search/search_page.dart';
+import 'package:overtune/global/current_theme.dart';
 /* The files named 'home' only store 'overlay widgets' like the NavigationRail
  * and Navigation Bar. The default screen is the Discover page. There is no "home_page.dart"
  * ~ Absyllute
@@ -24,39 +25,58 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 70,
+        title: SafeArea(
+          child: Padding(
+            padding: .only(top: 8.0),
+            child: SizedBox(
+              width: 512,
+              child: SearchBar(
+                backgroundColor: WidgetStateProperty.all(CurrentTheme.theme.onBackground),
+                leading: Icon(Icons.search, color: CurrentTheme.theme.dimTypography, size: 32),
+                hintText: "What do you want to play?",
+              ),
+            ),
+          ),
+        ),
+      ),
+
       body: Row(
         children: [
-          NavigationRail(
-            extended: true,
-            destinations: [
-              NavigationRailDestination(
-                  icon: Icon(Icons.explore_outlined),
-                  selectedIcon: Icon(Icons.explore),
-                  label: Text("Discover")
-              ),
-
-              NavigationRailDestination(
-                  icon: Icon(Icons.search),
-                  selectedIcon: Icon(Icons.search),
-                  label: Text("Search")
-              ),
-
-              NavigationRailDestination(
-                  icon: Icon(Icons.library_music_outlined),
-                  selectedIcon: Icon(Icons.library_music),
-                  label: Text("Library")
-              )
-            ],
-
-            onDestinationSelected: (int index) {
-              setState(() {
-                _selectedIndex = index;
-              });
-            },
-
-            selectedIndex: _selectedIndex,
-
-          ),
+          // NavigationRail(
+          //   extended: true,
+          //   destinations: [
+          //     NavigationRailDestination(
+          //         icon: Icon(Icons.explore_outlined),
+          //         selectedIcon: Icon(Icons.explore),
+          //         label: Text("Discover")
+          //     ),
+          //
+          //     NavigationRailDestination(
+          //         icon: Icon(Icons.search),
+          //         selectedIcon: Icon(Icons.search),
+          //         label: Text("Search")
+          //     ),
+          //
+          //     NavigationRailDestination(
+          //         icon: Icon(Icons.library_music_outlined),
+          //         selectedIcon: Icon(Icons.library_music),
+          //         label: Text("Library")
+          //     )
+          //   ],
+          //
+          //   onDestinationSelected: (int index) {
+          //     setState(() {
+          //       _selectedIndex = index;
+          //     });
+          //   },
+          //
+          //   selectedIndex: _selectedIndex,
+          //
+          // ),
 
           Expanded(
               child: _pages[_selectedIndex]
