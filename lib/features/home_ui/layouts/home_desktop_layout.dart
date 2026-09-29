@@ -42,7 +42,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
     if (query.trim().isEmpty) return;
     setState(() {
       searchQuery = query;
-      _searchFuture = SearchHelper.handleSearch(query, 5, ytInst);
+      _searchFuture = SearchHelper.handleSearch(query, 7, ytInst);
     });
   }
 
@@ -91,44 +91,41 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            SearchBar(
-                              constraints: const BoxConstraints(
-                                maxWidth: 512,
-                                minHeight: 64,
+                            SearchAnchor(
+                              viewConstraints: .new(
+                                maxWidth: 512
                               ),
-                              backgroundColor: WidgetStateProperty.all(CurrentTheme.theme.background),
-                              leading: Icon(Icons.search, color: CurrentTheme.theme.dimTypography, size: 32),
-                              hintText: "What do you want to play?",
-                              onSubmitted: _triggerSearch,
-                            ),
+                              builder: (BuildContext context, SearchController controller) {
+                                return SearchBar(
+                                  controller: controller,
+                                  constraints: const BoxConstraints(
+                                    maxWidth: 512,
+                                    minHeight: 64,
+                                  ),
+                                  backgroundColor: WidgetStateProperty.all(CurrentTheme.theme.background),
+                                  leading: Icon(Icons.search, color: CurrentTheme.theme.dimTypography, size: 32),
+                                  hintText: "What do you want to play?",
+                                  onChanged: (_) {
+                                    controller.openView();
+                                  },
+                                  onSubmitted: (query) {
+                                    _triggerSearch(query);
+                                    controller.openView();
+                                  },
+                                );
+                              },
+                              suggestionsBuilder: (BuildContext context, SearchController controller) async {
+                                if (controller.text.trim().isEmpty) {
+                                  return [];
+                                }
 
-                            if (_searchFuture != null)
-                              FutureBuilder<List<Video>>(
-                                future: _searchFuture,
-                                builder: (context, snapshot) {
-                                  if (snapshot.connectionState == .waiting) {
-                                    return const Padding(
-                                      padding: .all(8.0),
-                                      child: CircularProgressIndicator(),
-                                    );
-                                  }
-                                  if (snapshot.hasData) {
-                                    final List<Video> songs = snapshot.data!;
+                                final results = await SearchHelper.handleSearch(controller.text, 7, ytInst);
 
-                                    return ListView.builder(
-                                      shrinkWrap: true,
-                                      physics: const NeverScrollableScrollPhysics(),
-                                      itemCount: songs.length,
-                                      itemBuilder: (context, index) {
-                                        final song = songs[index];
-                                        return OTSearchResult(song: song);
-                                      },
-                                    );
-                                  }
-
-                                  return const SizedBox();
-                                },
-                              ),
+                                return results.map((song) {
+                                  return OTSearchResult(song: song);
+                                }).toList();
+                              },
+                            )
                           ],
                         ),
                       ),

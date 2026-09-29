@@ -19,13 +19,19 @@ class OTSearchResult extends StatelessWidget {
 
       child: Row(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Transform.scale(
-              scale: 1.35,
-              child: Image.network(
-                song.thumbnails.highResUrl,
-                fit: BoxFit.cover,
+          SizedBox(
+            width: 72,
+            child: AspectRatio(
+              aspectRatio: 1.0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Transform.scale(
+                  scale: 1.35,
+                  child: Image.network(
+                    song.thumbnails.highResUrl,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
           ),
