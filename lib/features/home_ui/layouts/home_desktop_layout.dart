@@ -119,7 +119,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                                   return [];
                                 }
 
-                                final results = await SearchHelper.handleSearch(controller.text, 7, ytInst);
+                                final results = await SearchHelper.handleSearch(controller.text, 8, ytInst);
 
                                 return results.map((song) {
                                   return OTSearchResult(song: song);
@@ -147,3 +147,6 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
     );
   }
 }
+
+// This file was partially written by Gemini
+// (Vibecoding is boring asf) ~Absyllute
