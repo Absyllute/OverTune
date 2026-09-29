@@ -95,6 +95,7 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                               viewConstraints: .new(
                                 maxWidth: 512
                               ),
+                              viewLeading: SizedBox(),
                               builder: (BuildContext context, SearchController controller) {
                                 return SearchBar(
                                   controller: controller,
@@ -105,6 +106,10 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                                   backgroundColor: WidgetStateProperty.all(CurrentTheme.theme.background),
                                   leading: Icon(Icons.search, color: CurrentTheme.theme.dimTypography, size: 32),
                                   hintText: "What do you want to play?",
+                                  onTap: () {
+                                   controller.openView();
+                                  },
+
                                   onChanged: (_) {
                                     controller.openView();
                                   },
