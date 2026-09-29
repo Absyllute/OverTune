@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:overtune/global/current_theme.dart';
 
 class LargeIcon extends StatefulWidget {
-  const LargeIcon({super.key, required this.icon});
+  const LargeIcon({super.key, required this.icon, this.mustAnimate = true});
 
   final IconData icon;
+  final bool mustAnimate;
 
   @override
   State<LargeIcon> createState() => _LargeIconState();
@@ -34,7 +35,7 @@ class _LargeIconState extends State<LargeIcon> with TickerProviderStateMixin {
         )
     );
 
-    _animController.repeat(reverse: true);
+    if (widget.mustAnimate) { _animController.repeat(reverse: true); }
   }
 
   @override
