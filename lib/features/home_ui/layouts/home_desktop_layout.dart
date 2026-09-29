@@ -86,7 +86,10 @@ class _HomeDesktopLayoutState extends State<HomeDesktopLayout> {
                 ),
 
                 Expanded(
-                    child: _pages[_selectedIndex]
+                  child: Padding(
+                    padding: .all(18.0),
+                    child: _pages[_selectedIndex],
+                  ),
                 )
               ],
             )
