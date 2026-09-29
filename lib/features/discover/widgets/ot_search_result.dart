@@ -4,8 +4,8 @@ import 'package:youtube_explode_dart/youtube_explode_dart.dart';
 
 import '../../../themes/typography.dart';
 
-class SearchResult extends StatelessWidget {
-  const SearchResult({super.key, required this.song});
+class OTSearchResult extends StatelessWidget {
+  const OTSearchResult({super.key, required this.song});
 
   final Video song;
 
