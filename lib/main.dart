@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         navigationRailTheme: cNavigationRailTheme,
         navigationBarTheme: cNavbarTheme,
         searchBarTheme: cSearchBarTheme,
+        searchViewTheme: cSearchViewTheme,
         appBarTheme: cAppBarTheme,
         scaffoldBackgroundColor: CurrentTheme.theme.background,
         textSelectionTheme: cTextSelectionThemeData

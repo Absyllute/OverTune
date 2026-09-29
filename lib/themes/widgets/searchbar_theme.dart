@@ -10,6 +10,11 @@ final SearchBarThemeData cSearchBarTheme = SearchBarThemeData(
   padding: .all(.only(left: 12))
 );
 
+final SearchViewThemeData cSearchViewTheme = SearchViewThemeData(
+  backgroundColor: CurrentTheme.theme.onBackground,
+  headerTextStyle: OTTypography.regular,
+);
+
 final TextSelectionThemeData cTextSelectionThemeData = TextSelectionThemeData(
   cursorColor: CurrentTheme.theme.primary,
   selectionHandleColor: CurrentTheme.theme.primary,
