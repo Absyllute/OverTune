@@ -19,7 +19,7 @@ class UnlockDiscover extends StatelessWidget {
         spacing: 12,
         mainAxisSize: .min,
         children: [
-          LargeIcon(icon: Icons.explore_outlined),
+          LargeIcon(icon: Icons.explore),
           Text("Build your discover feed!", style: OTTypography.h1),
           Text(
               "Play a few songs so that we can build your discover feed based on your interests",
